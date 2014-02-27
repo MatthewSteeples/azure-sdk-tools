@@ -85,9 +85,9 @@ namespace Microsoft.WindowsAzure.Commands.Utilities.Common
 
             BlobRequestOptions uploadRequestOption = blobRequestOptions ?? new BlobRequestOptions();
 
-            if (!blobRequestOptions.ServerTimeout.HasValue)
+            if (!uploadRequestOption.ServerTimeout.HasValue)
             {
-                blobRequestOptions.ServerTimeout = TimeSpan.FromMinutes(30);
+                uploadRequestOption.ServerTimeout = TimeSpan.FromMinutes(30);
             }
 
             using (FileStream readStream = File.OpenRead(filePath))
